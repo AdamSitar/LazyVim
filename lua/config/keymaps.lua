@@ -32,6 +32,9 @@ vim.keymap.set({ "n", "v" }, "c", '"_c', opts)
 vim.keymap.set({ "n", "v" }, "C", '"_C', opts)
 vim.keymap.set({ "n", "v" }, "p", "P", opts)
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz" )
+vim.keymap.set("n", "<C-u>", "<C-u>zz" )
+
 vim.keymap.set("n", "m", '<cmd>lua require("tsht").move({ side = "end" })<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "M", '<cmd>lua require("tsht").move({ side = "start" })<CR>', { noremap = true, silent = true })
 
