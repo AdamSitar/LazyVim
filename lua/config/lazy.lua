@@ -47,7 +47,16 @@ require("lazy").setup({
 })
 
 require("telescope").setup({
-  defaults = { file_ignore_patterns = { "node_modules", "./git", "/squashfs-root/usr/share/nvim/runtime/doc/*" } },
+  defaults = {
+    path_display = { "tail" },
+    file_ignore_patterns = {
+      "node_modules",
+      "./git",
+      "/squashfs-root/usr/share/nvim/runtime/doc/*",
+      "*.json",
+      -- "^package%-lock%.json$",
+    },
+  },
 })
 
 local navbuddy = require("nvim-navbuddy")
