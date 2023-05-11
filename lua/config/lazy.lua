@@ -7,6 +7,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+vim.g.gitblame_enabled = 0
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -15,6 +17,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -82,6 +86,9 @@ require("neo-tree").setup({
 })
 
 require("nvim-treesitter.configs").setup({
+  autotag = {
+    enable = true,
+  },
   textsubjects = {
     enable = true,
     prev_selection = ",", -- (Optional) keymap to select the previous selection
