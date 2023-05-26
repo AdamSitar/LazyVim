@@ -50,15 +50,38 @@ require("lazy").setup({
   },
 })
 
+require("notify").setup({
+  icons = {
+    DEBUG = "",
+    ERROR = "",
+    INFO = "",
+    TRACE = "✎",
+    WARN = "",
+  },
+  level = 2,
+  minimum_width = 50,
+  render = "minimal",
+  timeout = 500,
+  top_down = false,
+})
+
 require("telescope").setup({
   defaults = {
-    path_display = { "tail" },
+    mappings = {
+      n = {
+        ["<Del>"] = "delete_buffer",
+      },
+    },
+    path_display = {
+      show_only_cwd = true,
+      truncate = "true",
+    },
     file_ignore_patterns = {
       "node_modules",
       "./git",
       "/squashfs-root/usr/share/nvim/runtime/doc/*",
-      "*.json",
-      -- "^package%-lock%.json$",
+      "%.json",
+      "package%-lock%.json",
     },
   },
 })
@@ -98,16 +121,43 @@ require("nvim-treesitter.configs").setup({
   autotag = {
     enable = true,
   },
-  textsubjects = {
-    enable = true,
-    prev_selection = ",", -- (Optional) keymap to select the previous selection
-    keymaps = {
-      ["."] = "textsubjects-smart",
-      [";"] = "textsubjects-container-outer",
-      ["i;"] = "textsubjects-container-inner",
-    },
-  },
+  -- textsubjects = {
+  --   enable = true,
+  --   prev_selection = ",", -- (Optional) keymap to select the previous selection
+  --   keymaps = {
+  --     ["."] = "textsubjects-smart",
+  --     [";"] = "textsubjects-container-outer",
+  --     ["i;"] = "textsubjects-container-inner",
+  --   },
+  -- },
 })
+
+function ToggleDiagnosticVirtualText()
+  if toggled then
+    vim.diagnostic.config({
+      virtual_text = true,
+    })
+  else
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
+  end
+  toggled = not toggled
+end
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ut",
+  "<cmd>lua ToggleDiagnosticVirtualText()<CR>",
+  { noremap = true, silent = true }
+)
+
+-- disable diagnostics
+-- vim.diagnostic.config({
+--   virtual_text = false,
+-- })
+
+vim.api.nvim_command("set noswapfile")
 
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
