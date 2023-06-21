@@ -84,7 +84,20 @@ require("telescope").setup({
       "package%-lock%.json",
     },
   },
+  extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
+    },
+  },
 })
+
+require("telescope").load_extension("fzf")
+require("telescope").load_extension("neoclip")
+require("neoclip").setup()
 
 local navbuddy = require("nvim-navbuddy")
 local actions = require("nvim-navbuddy.actions")
@@ -145,12 +158,7 @@ function ToggleDiagnosticVirtualText()
   toggled = not toggled
 end
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ut",
-  "<cmd>lua ToggleDiagnosticVirtualText()<CR>",
-  { noremap = true, silent = true }
-)
+vim.keymap.set("n", "<leader>ut", "<cmd>lua ToggleDiagnosticVirtualText()<CR>", { noremap = true, silent = true })
 
 -- disable diagnostics
 -- vim.diagnostic.config({
@@ -163,5 +171,3 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
