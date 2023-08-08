@@ -12,12 +12,7 @@ function Map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
-Map(
-  "n",
-  "<leader>so",
-  require("telescope.builtin").oldfiles,
-  { noremap = true, silent = true, desc = "Find in registers" }
-)
+Map("n", "<leader>so", require("telescope.builtin").oldfiles, { noremap = true, silent = true, desc = "Oldfiles" })
 -- Map("n", "<C-d>", require("telescope.actions").delete_buffer, { noremap = true, silent = true })
 
 Map("n", "zR", require("ufo").openAllFolds)
@@ -25,10 +20,10 @@ Map("n", "zM", require("ufo").closeAllFolds)
 
 Map(
   "n",
-  "<leader>fr",
+  '<leader>"',
   -- require("telescope.builtin").registers,
   "<cmd>Telescope neoclip<CR>",
-  { noremap = true, silent = true, desc = "Old Files" }
+  { noremap = true, silent = true, desc = "Neoclip" }
 )
 
 -- Move to window using the <ctrl> hjkl keys
@@ -44,7 +39,7 @@ Map("n", "<leader>hn", require("harpoon.ui").nav_next, { desc = "Next mark" })
 Map("n", "<leader>hp", require("harpoon.ui").nav_prev, { desc = "Prev mark" })
 Map("n", "<leader>he", require("harpoon.mark").add_file, { desc = "Add file" })
 
-Map("n", "<leader>j", require("treesj").toggle)
+Map("n", "<leader>j", require("treesj").toggle, { desc = "Treesj toggle" })
 
 Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
 Map("n", "<leader>sm", "<cmd>SearchBoxIncSearch <CR>", { desc = "Start search" })
