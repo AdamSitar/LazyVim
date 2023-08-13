@@ -44,8 +44,8 @@ Map("n", "<leader>j", require("treesj").toggle, { desc = "Treesj toggle" })
 Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
 Map("n", "<leader>sm", "<cmd>SearchBoxIncSearch <CR>", { desc = "Start search" })
 
-Map({ "n", "v" }, "k", "j")
-Map({ "n", "v" }, "j", "k")
+Map({ "n", "v" }, "l", "k")
+Map({ "n", "v" }, "h", "j")
 
 Map({ "n", "v" }, "d", '"_d', opts)
 Map({ "n", "v" }, "D", '"_D', opts)
