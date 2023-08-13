@@ -49,8 +49,8 @@ Map({ "n", "v" }, "h", "j")
 
 Map({ "n", "v" }, "d", '"_d', opts)
 Map({ "n", "v" }, "D", '"_D', opts)
-Map({ "n", "v" }, "c", '"_c', opts)
-Map({ "n", "v" }, "C", '"_C', opts)
+Map({ "n", "v" }, "r", '"_c', opts)
+Map({ "n", "v" }, "R", '"_C', opts)
 Map({ "n", "v" }, "p", '""P', opts)
 Map({ "n", "v" }, "P", '""p', opts)
 
