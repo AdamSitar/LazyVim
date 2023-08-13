@@ -1,3 +1,3 @@
 return {
-  "ggandor/flit.nvim"
+  "ggandor/flit.nvim",
 }

@@ -1,18 +1,13 @@
 return {
   "ggandor/leap.nvim",
-  -- config = function()
-  --   require("leap").add_default_mappings()
-  -- end,
   opts = {
-    safe_labels = { "s", "e", "t", "n", "r", "i", "a", "o" },
+    safe_labels = { "s", "e", "t", "n", "r", "o" },
     labels = {
       "s",
       "e",
       "t",
       "n",
       "r",
-      "i",
-      "a",
       "o",
       "p",
       "l",
