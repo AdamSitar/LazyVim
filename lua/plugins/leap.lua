@@ -1,10 +1,10 @@
-if true then
-  return {}
-end
-
 return {
   "ggandor/leap.nvim",
   opts = {
+    keys = {
+      { "S", mode = { "n", "x", "o" }, desc = "Leap in window" },
+      { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
+    },
     target_windows = { vim.fn.win_getid() },
     safe_labels = { "s", "e", "t", "n", "r", "o" },
     labels = {

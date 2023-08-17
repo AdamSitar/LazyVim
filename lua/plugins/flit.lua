@@ -1,7 +1,4 @@
-if true then
-  return {}
-end
-
 return {
   "ggandor/flit.nvim",
+  enabled = false,
 }
