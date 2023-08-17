@@ -1,6 +1,7 @@
 return {
   "ggandor/leap.nvim",
   opts = {
+    target_windows = { vim.fn.win_getid() },
     safe_labels = { "s", "e", "t", "n", "r", "o" },
     labels = {
       "s",

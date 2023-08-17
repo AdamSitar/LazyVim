@@ -32,7 +32,7 @@ Map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 Map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 Map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 
-Map("n", "<leader>n", require("nvim-navbuddy").open, { desc = "Navbuddy" })
+-- Map("n", "<leader>n", require("nvim-navbuddy").open, { desc = "Navbuddy" })
 
 Map("n", "<leader>h", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon" })
 Map("n", "<leader>hn", require("harpoon.ui").nav_next, { desc = "Next mark" })
@@ -66,3 +66,32 @@ Map("i", "<A-k>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down", silent = true
 Map("i", "<A-j>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", silent = true })
 Map("v", "<A-k>", ":m '>+1<cr>gv=gv", { desc = "Move down", silent = true })
 Map("v", "<A-j>", ":m '<-2<cr>gv=gv", { desc = "Move up", silent = true })
+
+local leapOpts = {
+  target_windows = { vim.fn.win_getid() },
+  safe_labels = { "s", "e", "t", "n", "r", "o" },
+  labels = {
+    "s",
+    "e",
+    "t",
+    "n",
+    "r",
+    "o",
+    "p",
+    "l",
+    "f",
+    "u",
+    "d",
+    "h",
+    "c",
+    ",",
+    "g",
+    "m",
+    "w",
+    "y",
+  },
+}
+
+vim.keymap.set({ "n", "v" }, "s", function()
+  require("leap").leap(leapOpts)
+end)

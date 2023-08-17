@@ -99,20 +99,20 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("neoclip")
 require("neoclip").setup()
 
-local navbuddy = require("nvim-navbuddy")
-local actions = require("nvim-navbuddy.actions")
-
-navbuddy.setup({
-  mappings = {
-    ["u"] = actions.previous_sibling,
-    ["e"] = actions.next_sibling,
-    ["n"] = actions.parent,
-    ["i"] = actions.children,
-  },
-  lsp = {
-    preference = { "tsserver" },
-  },
-})
+-- local navbuddy = require("nvim-navbuddy")
+-- local actions = require("nvim-navbuddy.actions")
+--
+-- navbuddy.setup({
+--   mappings = {
+--     ["u"] = actions.previous_sibling,
+--     ["e"] = actions.next_sibling,
+--     ["n"] = actions.parent,
+--     ["i"] = actions.children,
+--   },
+--   lsp = {
+--     preference = { "tsserver" },
+--   },
+-- })
 
 require("lspconfig").clangd.setup({
   on_attach = function(client, bufnr)
@@ -127,6 +127,12 @@ require("neo-tree").setup({
       hide_dotfiles = false,
       hide_gitignored = true,
     },
+  },
+  source_selector = {
+    winbar = true,
+  },
+  requires = {
+    "nvim-tree/nvim-web-devicons",
   },
 })
 
@@ -171,3 +177,5 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
