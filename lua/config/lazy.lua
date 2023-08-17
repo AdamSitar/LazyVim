@@ -178,4 +178,16 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
+-- vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
+
+-- place this in one of your configuration file(s)
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+
+vim.keymap.set("", "s", function()
+  hop.hint_char1({})
+end, { remap = true })
+
+vim.keymap.set("", "S", function()
+  hop.hint_char2({ multi_windows = true })
+end, { remap = true })
