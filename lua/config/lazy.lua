@@ -14,7 +14,7 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
-    { import = "lazyvim.plugins.extras.lang.typescript" },
+    -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
@@ -82,6 +82,7 @@ require("telescope").setup({
       "/squashfs-root/usr/share/nvim/runtime/doc/*",
       "%.json",
       "package%-lock%.json",
+      "public",
     },
   },
   extensions = {
@@ -180,14 +181,22 @@ vim.o.foldenable = true
 
 -- vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
 
--- place this in one of your configuration file(s)
-local hop = require("hop")
-local directions = require("hop.hint").HintDirection
+-- local leap = require("leap")
+-- leap.add_default_mappings()
+-- vim.keymap.set("", "s", function()
+--   leap.leap({
+--     target_windows = vim.tbl_filter(function(win)
+--       return vim.api.nvim_win_get_config(win).focusable
+--     end, vim.api.nvim_tabpage_list_wins(0)),
+--   })
+-- end, { remap = true })
 
-vim.keymap.set("", "s", function()
-  hop.hint_char1({})
-end, { remap = true })
-
--- vim.keymap.set("", "S", function()
+-- local hop = require("hop")
+--
+-- vim.keymap.set("", "s", function()
+--   hop.hint_char1()
+-- end, { remap = true })
+--
+-- vim.keymap.set("", "f", function()
 --   hop.hint_char2({ multi_windows = true })
 -- end, { remap = true })

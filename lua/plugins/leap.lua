@@ -1,5 +1,6 @@
 return {
   "ggandor/leap.nvim",
+  enabled = false,
   opts = {
     keys = {
       { "S", mode = { "n", "x", "o" }, desc = "Leap in window" },

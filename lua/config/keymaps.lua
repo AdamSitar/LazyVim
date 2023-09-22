@@ -15,8 +15,8 @@ end
 Map("n", "<leader>so", require("telescope.builtin").oldfiles, { noremap = true, silent = true, desc = "Oldfiles" })
 -- Map("n", "<C-d>", require("telescope.actions").delete_buffer, { noremap = true, silent = true })
 
-Map("n", "zR", require("ufo").openAllFolds)
-Map("n", "zM", require("ufo").closeAllFolds)
+-- Map("n", "zR", require("ufo").openAllFolds)
+-- Map("n", "zM", require("ufo").closeAllFolds)
 
 Map(
   "n",
@@ -32,33 +32,25 @@ Map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 Map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 Map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 
--- Map("n", "<leader>n", require("nvim-navbuddy").open, { desc = "Navbuddy" })
-
 Map("n", "<leader>h", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon" })
 Map("n", "<leader>hn", require("harpoon.ui").nav_next, { desc = "Next mark" })
 Map("n", "<leader>hp", require("harpoon.ui").nav_prev, { desc = "Prev mark" })
 Map("n", "<leader>he", require("harpoon.mark").add_file, { desc = "Add file" })
 
-Map("n", "<leader>j", require("treesj").toggle, { desc = "Treesj toggle" })
+Map("n", "<leader>ug", "<cmd>GitBlameToggle <CR>", { desc = "Toggle git blame" })
 
 Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
 Map("n", "<leader>sm", "<cmd>SearchBoxIncSearch <CR>", { desc = "Start search" })
 
-Map({ "n", "v" }, "l", "k")
-Map({ "n", "v" }, "h", "j")
-
 Map({ "n", "v" }, "d", '"_d', opts)
-Map({ "n", "v" }, "D", '"_D', opts)
+Map({ "n", "v" }, "D", '"_diw', opts)
 Map({ "n", "v" }, "r", '"_c', opts)
-Map({ "n", "v" }, "R", '"_C', opts)
+Map({ "n", "v" }, "R", '"_ciw', opts)
 Map({ "n", "v" }, "p", '""P', opts)
-Map({ "n", "v" }, "P", '""p', opts)
+Map({ "n", "v" }, "P", '"_diwP', opts)
 
 Map("n", "<C-d>", "<C-d>zz")
 Map("n", "<C-u>", "<C-u>zz")
-
-Map("n", "m", '<cmd>lua require("tsht").move({ side = "end" })<CR>', { noremap = true, silent = true })
-Map("n", "M", '<cmd>lua require("tsht").move({ side = "start" })<CR>', { noremap = true, silent = true })
 
 Map("n", "<A-k>", "<cmd>m .+1<cr>==", { desc = "Move down", silent = true })
 Map("n", "<A-j>", "<cmd>m .-2<cr>==", { desc = "Move up", silent = true })
