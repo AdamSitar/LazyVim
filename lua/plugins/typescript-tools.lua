@@ -5,7 +5,7 @@ return {
     settings = {
       expose_as_code_action = "all",
       tsserver_plugins = {
-        "typescript-styled-plugin",
+        "@styled/typescript-styled-plugin",
       },
     },
   },

@@ -15,8 +15,7 @@ end
 Map("n", "<leader>so", require("telescope.builtin").oldfiles, { noremap = true, silent = true, desc = "Oldfiles" })
 -- Map("n", "<C-d>", require("telescope.actions").delete_buffer, { noremap = true, silent = true })
 
--- Map("n", "zR", require("ufo").openAllFolds)
--- Map("n", "zM", require("ufo").closeAllFolds)
+Map("n", "<leader>sS", "<cmd>Telescope luasnip<CR>", { noremap = true, silent = true, desc = "Luasnip" })
 
 Map(
   "n",
@@ -26,16 +25,24 @@ Map(
   { noremap = true, silent = true, desc = "Neoclip" }
 )
 
+Map(
+  "n",
+  "<leader>ct",
+  -- require("telescope.builtin").registers,
+  "<cmd>TSC<CR>",
+  { noremap = true, silent = true, desc = "Neoclip" }
+)
+
 -- Move to window using the <ctrl> hjkl keys
 Map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window", remap = true })
 Map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 Map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 Map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 
-Map("n", "<leader>h", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon" })
-Map("n", "<leader>hn", require("harpoon.ui").nav_next, { desc = "Next mark" })
-Map("n", "<leader>hp", require("harpoon.ui").nav_prev, { desc = "Prev mark" })
-Map("n", "<leader>he", require("harpoon.mark").add_file, { desc = "Add file" })
+-- Map("n", "<leader>h", require("harpoon.ui").toggle_quick_menu, { desc = "Harpoon" })
+-- Map("n", "<leader>hn", require("harpoon.ui").nav_next, { desc = "Next mark" })
+-- Map("n", "<leader>hp", require("harpoon.ui").nav_prev, { desc = "Prev mark" })
+-- Map("n", "<leader>he", require("harpoon.mark").add_file, { desc = "Add file" })
 
 Map("n", "<leader>ug", "<cmd>GitBlameToggle <CR>", { desc = "Toggle git blame" })
 

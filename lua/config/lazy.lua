@@ -2,7 +2,7 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=main",
     lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
@@ -16,7 +16,7 @@ require("lazy").setup({
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     -- import/override with your plugins
@@ -91,11 +91,10 @@ require("telescope").setup({
       override_generic_sorter = true, -- override the generic sorter
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-      -- the default case_mode is "smart_case"
     },
   },
 })
-
+require("telescope").load_extension("luasnip")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("neoclip")
 require("neoclip").setup()
@@ -151,6 +150,10 @@ require("nvim-treesitter.configs").setup({
   --   },
   -- },
 })
+
+-- disable snipper cmp
+-- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 function ToggleDiagnosticVirtualText()
   if toggled then
