@@ -30,7 +30,7 @@ Map(
   "<leader>ct",
   -- require("telescope.builtin").registers,
   "<cmd>TSC<CR>",
-  { noremap = true, silent = true, desc = "Neoclip" }
+  { noremap = true, silent = true, desc = "TS Check" }
 )
 
 -- Move to window using the <ctrl> hjkl keys
@@ -47,7 +47,6 @@ Map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 Map("n", "<leader>ug", "<cmd>GitBlameToggle <CR>", { desc = "Toggle git blame" })
 
 Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
-Map("n", "<leader>sm", "<cmd>SearchBoxIncSearch <CR>", { desc = "Start search" })
 
 Map({ "n", "v" }, "d", '"_d', opts)
 Map({ "n", "v" }, "D", '"_diw', opts)
