@@ -48,12 +48,15 @@ Map("n", "<leader>ug", "<cmd>GitBlameToggle <CR>", { desc = "Toggle git blame" }
 
 Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
 
+
+Map({ "n", "v" }, "y", '"+y', opts)
 Map({ "n", "v" }, "d", '"_d', opts)
 Map({ "n", "v" }, "D", '"_diw', opts)
 Map({ "n", "v" }, "r", '"_c', opts)
 Map({ "n", "v" }, "R", '"_ciw', opts)
-Map({ "n", "v" }, "p", '""P', opts)
-Map({ "n", "v" }, "P", '"_diwP', opts)
+Map({ "n", "v" }, "p", '"+P', opts)
+Map({ "n", "v" }, "P", '"_diw"_*P', opts)
+
 
 Map("n", "<C-d>", "<C-d>zz")
 Map("n", "<C-u>", "<C-u>zz")

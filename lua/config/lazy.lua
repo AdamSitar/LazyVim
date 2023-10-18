@@ -32,7 +32,6 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins
@@ -128,7 +127,7 @@ require("neo-tree").setup({
       hide_gitignored = true,
     },
     follow_current_file = {
-      enabled = true, -- This will find and focus the file in the active buffer every time
+      enabled = true,         -- This will find and focus the file in the active buffer every time
       --               -- the current file is changed while the tree is open.
       leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
     },
@@ -183,7 +182,7 @@ vim.keymap.set("n", "<leader>ut", "<cmd>lua ToggleDiagnosticVirtualText()<CR>", 
 vim.api.nvim_command("set noswapfile")
 
 vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
