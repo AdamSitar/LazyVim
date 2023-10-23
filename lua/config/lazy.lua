@@ -12,13 +12,17 @@ vim.g.gitblame_enabled = 0
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins"
+    },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.coding.yanky" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -86,18 +90,18 @@ require("telescope").setup({
   },
   extensions = {
     fzf = {
-      fuzzy = true, -- false will only do exact matching
+      fuzzy = true,                   -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      override_file_sorter = true,    -- override the file sorter
+      case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
     },
   },
 })
 require("telescope").load_extension("luasnip")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("neoclip")
+require("telescope").load_extension("git_worktree")
 require("neoclip").setup()
-
 -- local navbuddy = require("nvim-navbuddy")
 -- local actions = require("nvim-navbuddy.actions")
 --
@@ -140,20 +144,6 @@ require("neo-tree").setup({
   },
 })
 
-require("nvim-treesitter.configs").setup({
-  autotag = {
-    enable = true,
-  },
-  -- textsubjects = {
-  --   enable = true,
-  --   prev_selection = ",", -- (Optional) keymap to select the previous selection
-  --   keymaps = {
-  --     ["."] = "textsubjects-smart",
-  --     [";"] = "textsubjects-container-outer",
-  --     ["i;"] = "textsubjects-container-inner",
-  --   },
-  -- },
-})
 
 -- disable snipper cmp
 -- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())

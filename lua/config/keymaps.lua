@@ -16,6 +16,9 @@ Map("n", "<leader>so", require("telescope.builtin").oldfiles, { noremap = true, 
 -- Map("n", "<C-d>", require("telescope.actions").delete_buffer, { noremap = true, silent = true })
 
 Map("n", "<leader>sS", "<cmd>Telescope luasnip<CR>", { noremap = true, silent = true, desc = "Luasnip" })
+Map("n", "<leader>gw", function()
+  require('telescope').extensions.git_worktree.git_worktrees()
+end, { noremap = true, silent = true, desc = "Git worktrees" })
 
 Map(
   "n",
@@ -46,16 +49,18 @@ Map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 
 Map("n", "<leader>ug", "<cmd>GitBlameToggle <CR>", { desc = "Toggle git blame" })
 
-Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
+-- Map("n", "<leader>sr", "<cmd>SearchBoxReplace confirm=menu<CR>", { desc = "Search and replace" })
+Map('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = "Search on current file"
+})
 
-
-Map({ "n", "v" }, "y", '"+y', opts)
+-- Map({ "n", "v" }, "y", '"+y', opts)
 Map({ "n", "v" }, "d", '"_d', opts)
 Map({ "n", "v" }, "D", '"_diw', opts)
 Map({ "n", "v" }, "r", '"_c', opts)
 Map({ "n", "v" }, "R", '"_ciw', opts)
-Map({ "n", "v" }, "p", '"+P', opts)
-Map({ "n", "v" }, "P", '"_diw"_*P', opts)
+-- Map({ "n", "v" }, "p", '"+P', opts)
+-- Map({ "n", "v" }, "P", '"_diw"_*P', opts)
 
 
 Map("n", "<C-d>", "<C-d>zz")
