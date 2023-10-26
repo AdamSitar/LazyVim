@@ -1,3 +1,1 @@
-return {
-  "VonHeikemen/searchbox.nvim",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/searchbox.lua

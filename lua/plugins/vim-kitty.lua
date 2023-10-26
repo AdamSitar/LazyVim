@@ -1,3 +1,1 @@
-return {
-  "fladson/vim-kitty",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/vim-kitty.lua

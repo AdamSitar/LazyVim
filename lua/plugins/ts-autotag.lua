@@ -1,3 +1,1 @@
-return {
-  "windwp/nvim-ts-autotag",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/ts-autotag.lua

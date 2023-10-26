@@ -1,4 +1,1 @@
-return {
-  "benfowler/telescope-luasnip.nvim",
-  module = "telescope._extensions.luasnip",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/telescope-luasnip.lua

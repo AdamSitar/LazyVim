@@ -1,9 +1,1 @@
-return {
-  "stevearc/oil.nvim",
-  opts = {},
-  config = function()
-    require("oil").setup()
-  end,
-  -- Optional dependencies
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/oil.lua

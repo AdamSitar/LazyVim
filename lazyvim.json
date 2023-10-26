@@ -1,9 +1,1 @@
-{
-  "extras": [
-    "lazyvim.plugins.extras.coding.yanky"
-  ],
-  "news": {
-    "NEWS.md": "2123"
-  },
-  "version": 2
-}
+../../.dotfiles/nvim/.config/nvim/lazyvim.json

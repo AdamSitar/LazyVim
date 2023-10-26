@@ -1,4 +1,1 @@
-return {
-  "ThePrimeagen/harpoon",
-  enabled = false,
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/harpoon.lua

@@ -1,3 +1,1 @@
-return {
-  "f-person/git-blame.nvim",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/git-blame.lua

@@ -1,4 +1,1 @@
-return {
-  "mfussenegger/nvim-treehopper",
-  enabled = false,
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/nvim-treehopper.lua

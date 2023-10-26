@@ -1,6 +1,1 @@
-return {
-  "dmmulroy/tsc.nvim",
-  config = function()
-    require("tsc").setup()
-  end,
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/tsc.lua

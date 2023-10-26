@@ -1,3 +1,1 @@
-return {
-  "tpope/vim-repeat",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/repeat.lua

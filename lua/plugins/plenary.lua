@@ -1,3 +1,1 @@
-return {
-  "nvim-lua/plenary.nvim",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/plenary.lua

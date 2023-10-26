@@ -1,9 +1,1 @@
-return {
-  { "catppuccin/nvim", name = "catppuccin" },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin-mocha",
-    },
-  },
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/catpuccin.lua

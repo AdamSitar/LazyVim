@@ -1,3 +1,1 @@
-return {
-  "Clumsy-Coder/git-worktree.nvim"
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/git-worktree.lua

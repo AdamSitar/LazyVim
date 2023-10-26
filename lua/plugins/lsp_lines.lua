@@ -1,10 +1,1 @@
-if true then
-  return {}
-end
-
-return {
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  config = function()
-    require("lsp_lines").setup()
-  end,
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/lsp_lines.lua

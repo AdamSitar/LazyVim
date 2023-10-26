@@ -1,1 +1,1 @@
-return { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/telescope-fzf-native.lua

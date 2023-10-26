@@ -1,3 +1,1 @@
-return {
-  "nvim-tree/nvim-web-devicons",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/nvim-web-devicons.lua

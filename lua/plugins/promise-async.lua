@@ -1,3 +1,1 @@
-return {
-  "kevinhwang91/promise-async",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/promise-async.lua

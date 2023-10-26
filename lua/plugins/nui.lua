@@ -1,3 +1,1 @@
-return {
-  "MunifTanjim/nui.nvim",
-}
+../../../../.dotfiles/nvim/.config/nvim/lua/plugins/nui.lua
